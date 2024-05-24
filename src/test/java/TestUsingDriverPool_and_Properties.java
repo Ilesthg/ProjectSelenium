@@ -8,23 +8,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-import java.net.URL;
-
 import static org.junit.Assert.assertEquals;
 
 public class TestUsingDriverPool_and_Properties {
 
     //private String url = "https://www.google.com";
 
-    private String url = PropertiesFile.getProperty("url");
-    private WebDriver driver = DriverFactory.selectDriver();
+    private final String url = PropertiesFile.getProperty("url");
+    private  WebDriver driver= null;
 
 
 @Test
 
  public void visitGoogle() {
-    WebDriverManager.chromedriver().setup();
-
+    //WebDriverManager.chromedriver().setup();
+    driver = DriverFactory.selectDriver();
      driver.manage().window().maximize();
      driver.navigate().to(url);
 

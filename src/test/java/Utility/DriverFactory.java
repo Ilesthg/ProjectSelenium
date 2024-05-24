@@ -10,7 +10,7 @@ public class DriverFactory {
     //Creacion del objeto driver
 
     public static WebDriver driver;
-    public static String driversPath = "C:\\Users\\vhgm\\IdeaProjects\\ProjectSeleniumWebD\\src\\main\\resources\\drivers\\chromedriver.exe";
+    public static String driversPath = "src/test/resources/drivers/chromedriver.exe";
 
     //METODO PARA SLECCECIONAR UN BROWSER APLICANDO MODULARIDAD Y SEPRANDO EL BROWSER EN EL ARCHIVO DATA.PROPERTIES
     private static String browser = PropertiesFile.getProperty("browser");;
