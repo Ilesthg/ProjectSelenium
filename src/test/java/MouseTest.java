@@ -1,8 +1,7 @@
 
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +40,7 @@ public class MouseTest  {
                 .click(clickable)
                 .perform();
 
-        Assertions.assertTrue(driver.getCurrentUrl().contains("resultPage.html"));
+        Assert.assertTrue(driver.getCurrentUrl().contains("resultPage.html"));
     }
 
     @Test
@@ -53,14 +52,14 @@ public class MouseTest  {
                 .contextClick(clickable)
                 .perform();
 
-        Assertions.assertEquals("context-clicked", driver.findElement(By.id("click-status")).getText());
+        Assert.assertEquals("context-clicked", driver.findElement(By.id("click-status")).getText());
     }
 
     @Test
     public void backClick() {
         driver.get("https://www.selenium.dev/selenium/web/mouse_interaction.html");
         driver.findElement(By.id("click")).click();
-        Assertions.assertEquals(driver.getTitle(), "We Arrive Here");
+        Assert.assertEquals(driver.getTitle(), "We Arrive Here");
 
         PointerInput mouse = new PointerInput(PointerInput.Kind.MOUSE, "default mouse");
 
@@ -70,7 +69,7 @@ public class MouseTest  {
 
         ((RemoteWebDriver) driver).perform(Collections.singletonList(actions));
 
-        Assertions.assertEquals("BasicMouseInterfaceTest", driver.getTitle());
+        Assert.assertEquals("BasicMouseInterfaceTest", driver.getTitle());
     }
 
     @Test
@@ -78,7 +77,7 @@ public class MouseTest  {
         driver.get("https://www.selenium.dev/selenium/web/mouse_interaction.html");
         driver.findElement(By.id("click")).click();
         driver.navigate().back();
-        Assertions.assertEquals(driver.getTitle(), "BasicMouseInterfaceTest");
+        Assert.assertEquals(driver.getTitle(), "BasicMouseInterfaceTest");
 
         PointerInput mouse = new PointerInput(PointerInput.Kind.MOUSE, "default mouse");
 
@@ -88,7 +87,7 @@ public class MouseTest  {
 
         ((RemoteWebDriver) driver).perform(Collections.singletonList(actions));
 
-        Assertions.assertEquals("We Arrive Here", driver.getTitle());
+        Assert.assertEquals("We Arrive Here", driver.getTitle());
     }
 
     @Test
@@ -100,7 +99,7 @@ public class MouseTest  {
                 .doubleClick(clickable)
                 .perform();
 
-        Assertions.assertEquals("double-clicked", driver.findElement(By.id("click-status")).getText());
+        Assert.assertEquals("double-clicked", driver.findElement(By.id("click-status")).getText());
     }
 
     @Test
@@ -112,7 +111,7 @@ public class MouseTest  {
                 .moveToElement(hoverable)
                 .perform();
 
-        Assertions.assertEquals("hovered", driver.findElement(By.id("move-status")).getText());
+        Assert.assertEquals("hovered", driver.findElement(By.id("move-status")).getText());
     }
 
     @Test
@@ -126,7 +125,7 @@ public class MouseTest  {
                 .perform();
 
         String[] result = driver.findElement(By.id("relative-location")).getText().split(", ");
-        Assertions.assertTrue(Math.abs(Integer.parseInt(result[0]) - 100 - 8) < 2);
+        Assert.assertTrue(Math.abs(Integer.parseInt(result[0]) - 100 - 8) < 2);
     }
 
     @Test
@@ -141,8 +140,8 @@ public class MouseTest  {
         ((RemoteWebDriver) driver).perform(Collections.singletonList(actions));
 
         String[] result = driver.findElement(By.id("absolute-location")).getText().split(", ");
-        Assertions.assertTrue(Math.abs(Integer.parseInt(result[0]) - 8) < 2);
-        Assertions.assertTrue(Math.abs(Integer.parseInt(result[1]) - 12) < 2);
+        Assert.assertTrue(Math.abs(Integer.parseInt(result[0]) - 8) < 2);
+        Assert.assertTrue(Math.abs(Integer.parseInt(result[1]) - 12) < 2);
     }
 
     @Test
@@ -160,8 +159,8 @@ public class MouseTest  {
                 .perform();
 
         String[] result = driver.findElement(By.id("absolute-location")).getText().split(", ");
-        Assertions.assertTrue(Math.abs(Integer.parseInt(result[0]) - 8 - 13) < 2);
-        Assertions.assertTrue(Math.abs(Integer.parseInt(result[1]) - 11 - 15) < 2);
+        Assert.assertTrue(Math.abs(Integer.parseInt(result[0]) - 8 - 13) < 2);
+        Assert.assertTrue(Math.abs(Integer.parseInt(result[1]) - 11 - 15) < 2);
     }
 
     @Test
@@ -174,7 +173,7 @@ public class MouseTest  {
                 .dragAndDrop(draggable, droppable)
                 .perform();
 
-        Assertions.assertEquals("dropped", driver.findElement(By.id("drop-status")).getText());
+        Assert.assertEquals("dropped", driver.findElement(By.id("drop-status")).getText());
     }
 
     @Test
@@ -188,6 +187,6 @@ public class MouseTest  {
                 .dragAndDropBy(draggable, finish.getX() - start.getX(), finish.getY() - start.getY())
                 .perform();
 
-        Assertions.assertEquals("dropped", driver.findElement(By.id("drop-status")).getText());
+        Assert.assertEquals("dropped", driver.findElement(By.id("drop-status")).getText());
     }
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class ActionClass {
 
@@ -18,7 +19,7 @@ public class ActionClass {
     WebDriver driver = new ChromeDriver();
 
     @Test
-    public void manjeoDeEventos(){
+    public void manjeoDeEventos() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver" , driversPath);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
@@ -31,8 +32,19 @@ public class ActionClass {
        // inputGoogle.sendKeys("Hola pepe");
 
         Actions builder = new Actions(driver);
+        builder.moveToElement(lens).click();
 
-        Action action = builder
+    /*
+     builder.moveToElement(inputGoogle).click()
+                .keyDown(inputGoogle, Keys.SHIFT)
+                .sendKeys("Hola Pepe")
+                .contextClick();
+     */
+
+
+        builder.perform();
+/*
+  Action action = builder
                 .moveToElement(lens)
                 .build();
 
@@ -47,8 +59,10 @@ public class ActionClass {
                 .build();
 
         ac2.perform();
+s
+ */
 
-        driver.quit();
+        //driver.quit();
 
 
 

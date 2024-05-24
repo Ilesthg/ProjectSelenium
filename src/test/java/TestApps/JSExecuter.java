@@ -7,8 +7,9 @@ import org.openqa.selenium.By;
 
 public class JSExecuter {
     public static void main(String[] args) {
+        String driversPath = "C:\\Users\\vhgm\\IdeaProjects\\ProjectSeleniumWebD\\src\\main\\resources\\drivers\\chromedriver.exe";
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\vhgm\\IdeaProjects\\ProjectSeleniumWebD\\src\\main\\resources\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", driversPath);
 
         WebDriver driver = new ChromeDriver();
 

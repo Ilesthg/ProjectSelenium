@@ -9,8 +9,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class SeleniumTests {
 
     private String url = "https://www.google.com";
-    private String driversPath = "C:\\Users\\vhgm\\IdeaProjects\\ProjectSeleniumWebD\\src\\main\\resources\\drivers\\chromedriver.exe";
+    private static String driversPath = "./src/main/resources/drivers/chromedriver.exe";
 
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver" , driversPath);
+        WebDriver wb = new ChromeDriver();
+        wb.navigate().to("https://www.google.com");
+        wb.close();
+    }
 @Test
  public void visitGoogle_usingCssSelector() {
     System.setProperty("webdriver.chrome.driver", driversPath);
@@ -19,12 +25,14 @@ public class SeleniumTests {
 
     driver.manage().window().maximize();
     driver.navigate().to(url);
+    ;
+    System.out.println(driver.manage().getCookies());
 
     //driver.get(url);
     WebElement searchInput = driver.findElement(By.id("APjFqb"));
     searchInput.sendKeys("Selenium");
     searchInput.sendKeys(Keys.ENTER);
-
+    
     assertEquals("Selenium - Buscar con Google", driver.getTitle());
 
 
