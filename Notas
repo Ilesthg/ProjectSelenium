@@ -1,0 +1,7 @@
+Punto 1 ---> Tener cuidado al crear instancia de WebdriverWait o Driver, esta debe eswtar asginada en el contructor o el metodo, puede estar instanciada a nive lde clase, pero al crear
+el new objeto tiene que estar a nivel constructor o nivel metodo
+
+
+
+Si importas una clase para usar un metodo este tiene que ser estatico
+workaround, hacer inheritance y disponer los metodos sin hacerlos estaticos
