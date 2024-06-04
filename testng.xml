@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/j/IdeaProjects/ProjectSelenium">
+        <classes>
+            <class name="FacebookPOM_TestNG.Test.TestFacebook">
+                <methods>
+                    <include name="invalidCredentialsforFacebook"/>
+                </methods>
+            </class>
+            <class name="JPetStorePOM_PageFactory.Test.JPSTest">
+                <methods>
+                    <include name="LoginWithInvalidCredentials"/>
+                </methods>
+            </class>
+            <class name="TestApps.Actionclass">
+                <methods>
+                    <include name="actionandSroll"/>
+                </methods>
+            </class>
+            <class name="TestApps.Checkbox">
+                <methods>
+                    <include name="radioButtonsSelect"/>
+                </methods>
+            </class>
+            <class name="TestApps.DragAndDrop">
+                <methods>
+                    <include name="dragAndDrop"/>
+                </methods>
+            </class>
+            <class name="TestApps.JScriptExecuter">
+                <methods>
+                    <include name="JSE"/>
+                </methods>
+            </class>
+            <class name="TestApps.Login">
+                <methods>
+                    <include name="gotoFormy"/>
+                </methods>
+            </class>
+            <class name="TestApps.RadioButtons">
+                <methods>
+                    <include name="radioButtonsSelect"/>
+                </methods>
+            </class>
+            <class name="TestApps.SwitchWindow_and_Alerts">
+                <methods>
+                    <include name="switchWindows"/>
+                    <include name="swithchToAlert"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
