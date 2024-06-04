@@ -3,7 +3,9 @@ package FacebookPOM_TestNG.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FacebookLogin extends BaseModel{
+public class FacebookLogin {
+        //extends BaseModel
+    /*
     //Driver y atributos
   //  WebDriver driver; Borra este driver si ya tenemos uno en la Page BaseModel
     By email_or_phoneInput = By.cssSelector("[name = email]");
@@ -22,8 +24,7 @@ public class FacebookLogin extends BaseModel{
     public FacebookLogin(WebDriver driver){
         this.driver = driver;
     }
-    */
-    BaseModel bm = new BaseModel(driver);
+      BaseModel bm = new BaseModel(driver);
     //FacebookLogin fl = new FacebookLogin(driver);//Hereda los metodos de la clase padre
 
 
@@ -41,6 +42,10 @@ public class FacebookLogin extends BaseModel{
         bm.waitForElementandgiveText(modalFirstNameInput, "NOMAS");
     }
 
+
+
+
+*/
 
 
 

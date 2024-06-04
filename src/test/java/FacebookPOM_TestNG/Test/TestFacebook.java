@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class TestFacebook {
-
+/*
     WebDriver driver = new ChromeDriver();
 
     private String URL = "https://www.facebook.com/?locale=en_US";
@@ -48,6 +48,6 @@ public class TestFacebook {
     }
 
 
-
+*/
 
 }

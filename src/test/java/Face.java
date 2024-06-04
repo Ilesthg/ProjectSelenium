@@ -1,30 +1,37 @@
-import org.junit.Test;
+import Lap.Utility.Screenshots;
+import Utility.BaseMode;
+
+
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
-public class Face {
+import java.io.IOException;
+
+public class Face extends BaseMode{
+
+Screenshots ss = new Screenshots();
 
 
-
-    WebDriver driver = new ChromeDriver();
-
+   // WebDriver driver = new ChromeDriver();
+// public static  WebDriver driver;
     private static final String URL ="https://www.facebook.com/?locale=en_US";
-    private static final String driversPath ="C:\\Users\\vhgm\\IdeaProjects\\ProjectSeleniumWebD\\src\\main\\resources\\drivers\\chromedriver.exe";
+    //private static final String driversPath ="C:\\Users\\vhgm\\IdeaProjects\\ProjectSeleniumWebD\\src\\main\\resources\\drivers\\chromedriver.exe";
 
 @Test
-    public void selectText(){
-        System.setProperty("webdriver.chrome.driver", driversPath);
-
-        driver.navigate().to(URL);
-        driver.manage().window().maximize();
-
+    public void selectText() throws IOException {
+driver.get(URL);
+driver.manage().window().maximize();
+Screenshots.takeScreenS();
 
 
-        Actions builder = new Actions(driver);
+
+
+
+
+   Actions builder = new Actions(driver);
 
         Action ac1 = builder
                 //.moveToElement(driver.findElement(By.xpath("//*[@id='content']/div/div/div/div[1]/h2")))
@@ -37,5 +44,7 @@ public class Face {
                 .build();
 
         ac1.perform();
+
+
     }
 }
